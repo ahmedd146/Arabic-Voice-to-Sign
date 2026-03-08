@@ -9,13 +9,13 @@ import time
 def print_arabic(label, text):
     """
     Helper to print Arabic text correctly in Windows Terminal.
+    Modern terminals usually handle RTL natively, so we just reshape it 
+    to ensure letters are connected, without reversing the string.
     """
     try:
-        # Reshape the characters (connect letters)
+        # Reshape the characters to connect letters
         reshaped = arabic_reshaper.reshape(str(text))
-        # Reorder for Bidi (Right-to-Left)
-        bidi_text = get_display(reshaped)
-        print(f"{label}: {bidi_text}")
+        print(f"{label}: {reshaped}")
         
     except Exception as e:
         print(f"{label}: {text} (Display Error: {e})")
