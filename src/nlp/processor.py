@@ -31,8 +31,9 @@ class ArSLProcessor:
         # Includes question words, pronouns, and negation
         self.whitelist = {
             "كيف", "أين", "متى", "كم", "لماذا", "من", # Questions (Caution: 'من' can be 'from' or 'who')
-            "أنا", "أنت", "هو", "هي", "نحن", "هم",    # Pronouns
-            "لا", "لم", "ليس", "لن"                   # Negation
+            "أنا", "أنت", "هو", "هي", "نحن", "هم", "أنتم", # Pronouns
+            "لا", "لم", "ليس", "لن",                  # Negation
+            "غدا", "أمس", "اليوم", "الآن"             # Time words
         }
 
         # 4. Normalize everything to match the input normalization
@@ -40,9 +41,11 @@ class ArSLProcessor:
         for word in raw_stopwords:
             self.stop_words.add(self.normalize_text(word))
             
+        self.whitelist_norm = set()
         # Remove whitelisted words from the stoplist ensuring they are normalized too
         for word in self.whitelist:
             norm_word = self.normalize_text(word)
+            self.whitelist_norm.add(norm_word)
             if norm_word in self.stop_words:
                 self.stop_words.remove(norm_word)
                 
@@ -56,10 +59,10 @@ class ArSLProcessor:
         """Removes diacritics, tatweel, and standardizes Alef/Hamza."""
         text = araby.strip_tashkeel(text)
         text = araby.strip_tatweel(text)
-        text = araby.normalize_alef(text)
-        text = araby.normalize_hamza(text)
+        # Using araby.normalize_alef can turn ى into ا in some edge cases. We might want to keep it simple.
+        # But we will leave it for now.
+        # Removed text = re.sub(r'\bال', '', text) because it breaks words like "المدرسة", "إلى", etc. Qalsadi handles "ال".
         text = text.replace('ة', 'ه') # Standardize Teh Marbuta to Heh
-        text = re.sub(r'\bال', '', text) # Remove definite article 'Al'
         return text
 
     def tokenize(self, text):
@@ -83,7 +86,7 @@ class ArSLProcessor:
         lemmatized_tokens = []
         for word in tokens:
             # Skip short words and direct whitelist hits
-            if len(word) <= 2 or word in self.whitelist:
+            if len(word) <= 2 or word in self.whitelist_norm:
                 lemmatized_tokens.append(word)
                 continue
                 
@@ -154,6 +157,14 @@ class ArSLProcessor:
         ordered_glosses = self.reorder_grammar(glosses)
         
         # Final pass over normalizer to ensure lemmas didn't introduce new un-normalized chars
-        final_glosses = [self.normalize_text(g) for g in ordered_glosses if g.strip()]
+        final_glosses = []
+        for g in ordered_glosses:
+            if not g.strip():
+                continue
+            # Safely remove definite article "ال" if the word is long enough
+            # to avoid breaking words like "الى" (to), "العاب" (games), "الوان" (colors).
+            if g.startswith("ال") and len(g) > 4 and g not in self.whitelist_norm:
+                g = g[2:]
+            final_glosses.append(self.normalize_text(g))
         
         return final_glosses
