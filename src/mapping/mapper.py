@@ -38,7 +38,7 @@ class SignMapper:
                 
                 # Normalize keys for robust lookup
                 for key, value in raw_lexicon.items():
-                    norm_key = self.normalizer.normalize(key)
+                    norm_key = self.normalizer.normalize_text(key)
                     self.lexicon[norm_key] = value
                     
             print(f"Loaded Lexicon with {len(self.lexicon)} entries.")
@@ -55,7 +55,7 @@ class SignMapper:
         Returns the 'sign_id' (or 'animation' filename) if found, else None.
         """
         # Normalize the input gloss to match lexicon keys
-        norm_gloss = self.normalizer.normalize(gloss)
+        norm_gloss = self.normalizer.normalize_text(gloss)
         
         # Exact match on normalized key
         if norm_gloss in self.lexicon:
