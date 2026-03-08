@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "institution": "Galala University",
+    "language": "Arabic",
+    "domain": "university_communication",
+    "version": "1.2"
+  },
+  "lexicon": {
+    "مرحبا": {
+      "sign_id": "greeting",
+      "category": "common",
+      "description": "General greeting",
+      "animation": "greeting.anim"
+    },
+    "السلام": {
+      "sign_id": "greeting",
+      "category": "common",
+      "description": "Greeting (peace)",
+      "animation": "greeting.anim"
+    },
+    "عليكم": {
+      "sign_id": "greeting",
+      "category": "common",
+      "description": "Greeting continuation",
+      "animation": "greeting.anim"
+    },
+    "شكرا": {
+      "sign_id": "thanks",
+      "category": "common",
+      "description": "Expression of gratitude",
+      "animation": "thanks.anim"
+    },
+    "نعم": {
+      "sign_id": "yes",
+      "category": "common",
+      "description": "Affirmation",
+      "animation": "yes.anim"
+    },
+    "لا": {
+      "sign_id": "no",
+      "category": "common",
+      "description": "Negation",
+      "animation": "no.anim"
+    },
+    "انا": {
+      "sign_id": "i",
+      "category": "pronouns",
+      "description": "First person singular",
+      "animation": "i.anim"
+    },
+    "انت": {
+      "sign_id": "you",
+      "category": "pronouns",
+      "description": "Second person singular",
+      "animation": "you.anim"
+    },
+    "هو": {
+      "sign_id": "he",
+      "category": "pronouns",
+      "description": "Third person masculine",
+      "animation": "he.anim"
+    },
+    "هي": {
+      "sign_id": "she",
+      "category": "pronouns",
+      "description": "Third person feminine",
+      "animation": "she.anim"
+    },
+    "نحن": {
+      "sign_id": "we",
+      "category": "pronouns",
+      "description": "First person plural",
+      "animation": "we.anim"
+    },
+    "اين": {
+      "sign_id": "where",
+      "category": "questions",
+      "description": "Question: where",
+      "animation": "where.anim"
+    },
+    "كيف": {
+      "sign_id": "how",
+      "category": "questions",
+      "description": "Question: how",
+      "animation": "how.anim"
+    },
+    "كم": {
+      "sign_id": "how_many",
+      "category": "questions",
+      "description": "Question: how much/many",
+      "animation": "how_many.anim"
+    },
+    "جامعة": {
+      "sign_id": "university",
+      "category": "university_life",
+      "description": "University",
+      "animation": "university.anim"
+    },
+    "كلية": {
+      "sign_id": "faculty",
+      "category": "university_life",
+      "description": "Faculty or college",
+      "animation": "faculty.anim"
+    },
+    "محاضرة": {
+      "sign_id": "lecture",
+      "category": "academics",
+      "description": "Lecture",
+      "animation": "lecture.anim"
+    },
+    "طالب": {
+      "sign_id": "student",
+      "category": "people",
+      "description": "Student",
+      "animation": "student.anim"
+    },
+    "دكتور": {
+      "sign_id": "professor",
+      "category": "people",
+      "description": "Doctor or professor",
+      "animation": "professor.anim"
+    },
+    "مكتب": {
+      "sign_id": "office",
+      "category": "facilities",
+      "description": "Office",
+      "animation": "office.anim"
+    },
+    "القبول": {
+      "sign_id": "admission",
+      "category": "admission_services",
+      "description": "The admission",
+      "animation": "admission.anim"
+    },
+    "تقديم": {
+      "sign_id": "apply",
+      "category": "admission_services",
+      "description": "Apply for admission",
+      "animation": "apply.anim"
+    },
+    "أريد": {
+      "sign_id": "want",
+      "category": "common",
+      "description": "I want",
+      "animation": "want.anim"
+    },
+    "التقديم": {
+      "sign_id": "application",
+      "category": "admission_services",
+      "description": "The application",
+      "animation": "apply.anim"
+    },
+    "تسجيل": {
+      "sign_id": "registration",
+      "category": "admission_services",
+      "description": "Registration",
+      "animation": "registration.anim"
+    },
+    "قبول": {
+      "sign_id": "admission",
+      "category": "admission_services",
+      "description": "Admission acceptance",
+      "animation": "admission.anim"
+    },
+    "اوراق": {
+      "sign_id": "documents",
+      "category": "admission_services",
+      "description": "Required documents",
+      "animation": "documents.anim"
+    },
+    "موعد": {
+      "sign_id": "appointment",
+      "category": "admission_services",
+      "description": "Appointment",
+      "animation": "appointment.anim"
+    },
+    "مصاريف": {
+      "sign_id": "fees",
+      "category": "admission_services",
+      "description": "Tuition fees",
+      "animation": "fees.anim"
+    },
+    "منحة": {
+      "sign_id": "scholarship",
+      "category": "admission_services",
+      "description": "Scholarship",
+      "animation": "scholarship.anim"
+    },
+    "امتحان": {
+      "sign_id": "exam",
+      "category": "academics",
+      "description": "Exam",
+      "animation": "exam.anim"
+    },
+    "نتيجة": {
+      "sign_id": "result",
+      "category": "academics",
+      "description": "Result",
+      "animation": "result.anim"
+    },
+    "كتاب": {
+      "sign_id": "book",
+      "category": "academics",
+      "description": "Book",
+      "animation": "book.anim"
+    },
+    "واجب": {
+      "sign_id": "homework",
+      "category": "academics",
+      "description": "Homework",
+      "animation": "homework.anim"
+    },
+    "مشروع": {
+      "sign_id": "project",
+      "category": "academics",
+      "description": "Project",
+      "animation": "project.anim"
+    },
+    "مكتبة": {
+      "sign_id": "library",
+      "category": "facilities",
+      "description": "Library",
+      "animation": "library.anim"
+    },
+    "معمل": {
+      "sign_id": "lab",
+      "category": "facilities",
+      "description": "Laboratory",
+      "animation": "lab.anim"
+    },
+    "قاعة": {
+      "sign_id": "hall",
+      "category": "facilities",
+      "description": "Lecture hall",
+      "animation": "hall.anim"
+    },
+    "باص": {
+      "sign_id": "bus",
+      "category": "services",
+      "description": "University bus",
+      "animation": "bus.anim"
+    },
+    "سكن": {
+      "sign_id": "housing",
+      "category": "services",
+      "description": "University housing",
+      "animation": "housing.anim"
+    },
+    "خريطة": {
+      "sign_id": "map",
+      "category": "services",
+      "description": "Campus map",
+      "animation": "map.anim"
+    },
+    "مبنى": {
+      "sign_id": "building",
+      "category": "services",
+      "description": "Building",
+      "animation": "building.anim"
+    }
+  }
+}

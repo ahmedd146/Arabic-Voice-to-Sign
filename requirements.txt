@@ -1,0 +1,7 @@
+SpeechRecognition
+pyaudio
+arabic-reshaper
+python-bidi
+PyArabic
+nltk
+webrtcvad
